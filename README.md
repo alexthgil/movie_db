@@ -1,4 +1,4 @@
-#Cinema
+Cinema
 
 Gives user an ability to discover films by categories: now playing, popular, top rated, upcoming.
 User can search films by name. 

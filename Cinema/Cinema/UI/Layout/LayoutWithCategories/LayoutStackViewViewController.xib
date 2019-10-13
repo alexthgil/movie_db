@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LayoutStackViewViewController" customModule="Cinema" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="whp-wb-InB" id="yti-DW-qHM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="662" height="1277"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="whp-wb-InB">
+                    <rect key="frame" x="0.0" y="0.0" width="662" height="1277"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="whp-wb-InB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5qr-Vd-AHh"/>
+                <constraint firstItem="whp-wb-InB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7wJ-Vc-vmt"/>
+                <constraint firstItem="whp-wb-InB" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="MEf-8j-BcP"/>
+                <constraint firstAttribute="bottom" secondItem="whp-wb-InB" secondAttribute="bottom" id="cee-W0-zPq"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="256.52173913043481" y="197.20982142857142"/>
+        </view>
+    </objects>
+</document>

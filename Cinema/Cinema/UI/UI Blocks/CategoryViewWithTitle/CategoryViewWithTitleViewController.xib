@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewWithTitleViewController" customModule="Cinema" customModuleProvider="target">
+            <connections>
+                <outlet property="categorySubTitleLabel" destination="Tcr-cL-42x" id="X4X-tU-z5B"/>
+                <outlet property="categoryTitleLabel" destination="G7Z-df-xa1" id="vsJ-Pl-0eg"/>
+                <outlet property="contentView" destination="sVV-KO-pwC" id="is5-7c-xSA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="311"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVV-KO-pwC">
+                    <rect key="frame" x="0.0" y="82" width="414" height="229"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="229" id="V2a-vS-p9K"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Top Rated" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7Z-df-xa1">
+                    <rect key="frame" x="20" y="10" width="102" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcr-cL-42x">
+                    <rect key="frame" x="355" y="36" width="39" height="41"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="G7Z-df-xa1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="7j4-0n-bco"/>
+                <constraint firstItem="sVV-KO-pwC" firstAttribute="top" secondItem="Tcr-cL-42x" secondAttribute="bottom" constant="5" id="VO6-Ce-DW1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tcr-cL-42x" secondAttribute="trailing" constant="20" id="XXN-Ny-mOc"/>
+                <constraint firstItem="Tcr-cL-42x" firstAttribute="top" secondItem="G7Z-df-xa1" secondAttribute="bottom" constant="5" id="d3u-B7-7cJ"/>
+                <constraint firstAttribute="bottom" secondItem="sVV-KO-pwC" secondAttribute="bottom" id="e5p-Y3-IeJ"/>
+                <constraint firstAttribute="trailing" secondItem="sVV-KO-pwC" secondAttribute="trailing" id="hJi-5I-2ly"/>
+                <constraint firstItem="sVV-KO-pwC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rKi-gB-CUL"/>
+                <constraint firstItem="G7Z-df-xa1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zY5-Em-jV4"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="136.23188405797103" y="-67.299107142857139"/>
+        </view>
+    </objects>
+</document>

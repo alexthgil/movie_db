@@ -70,6 +70,7 @@
 		FA5445B023535BEB008A6635 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5445AE23535BEB008A6635 /* View+.swift */; };
 		FA5445B123535BEB008A6635 /* AtomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5445AF23535BEB008A6635 /* AtomPresenter.swift */; };
 		FA5445B423535D16008A6635 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5445B323535D16008A6635 /* WebKit.framework */; };
+		FA67619C2353AD0F0080558A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67619B2353AD0F0080558A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		FA5445AE23535BEB008A6635 /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		FA5445AF23535BEB008A6635 /* AtomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomPresenter.swift; sourceTree = "<group>"; };
 		FA5445B323535D16008A6635 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FA67619B2353AD0F0080558A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5444FA235343E8008A6635 /* AppDelegate.swift */,
+				FA67619B2353AD0F0080558A /* SceneDelegate.swift */,
 				FA5445AD23535BEB008A6635 /* HelpStuff */,
 				FA544551235359D6008A6635 /* UI */,
 				FA544530235359BB008A6635 /* Model */,
@@ -659,6 +662,7 @@
 				FA5445AA235359D7008A6635 /* ViewWithFixedWidthPresenter.swift in Sources */,
 				FA54454B235359BC008A6635 /* CoreDataManager.swift in Sources */,
 				FA544595235359D7008A6635 /* CollectionViewPresenter.swift in Sources */,
+				FA67619C2353AD0F0080558A /* SceneDelegate.swift in Sources */,
 				FA544591235359D7008A6635 /* CollectionViewDataSource.swift in Sources */,
 				FA54454C235359BC008A6635 /* Tile+CoreDataClass.swift in Sources */,
 				FA54458A235359D7008A6635 /* LayoutStackViewPresenter.swift in Sources */,

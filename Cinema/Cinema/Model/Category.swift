@@ -41,7 +41,7 @@ enum Category: Int, CaseIterable {
         case .toprated:
             return "Top Rated"
         case .upcaming:
-            return "Up Caming"
+            return "Upcoming"
         }
     }
     
@@ -50,7 +50,7 @@ enum Category: Int, CaseIterable {
         case .none:
             return ""
         case .nowplaying:
-            return "latest movies playing now in theatres"
+            return "latest movies now playing in theatres"
         case .popular:
             return "current popular movies on TMDb"
         case .toprated:

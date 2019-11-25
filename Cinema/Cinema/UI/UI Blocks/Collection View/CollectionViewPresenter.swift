@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 protocol CollectionViewPresenterModel: class {
+    var inited: Bool { get }
     func loadNextPage()
     func loadInitialData()
     func buildFetchResultsController(category: Category, completion: @escaping ((CollectionViewCacheTracker)-> Void))
@@ -77,9 +78,15 @@ class CollectionViewPresenter: AtomPresenter, CollectionViewDelegateListener {
             DispatchQueue.main.async {
                 self.cacheTracker = cacheTracker
                 cacheTracker.listener = self.dataSource
-                self.clearAll(completion: {
-                    self.model.loadInitialData()
-                })
+                
+                if self.model.inited == false {
+                    self.clearAll(completion: {
+                        self.model.loadInitialData()
+                    })
+                } else {
+                    self.dataSource.clearAll()
+                    self.cacheTracker?.obtainTransactionBatchFromCurrentCache()
+                }
             }
         }
 

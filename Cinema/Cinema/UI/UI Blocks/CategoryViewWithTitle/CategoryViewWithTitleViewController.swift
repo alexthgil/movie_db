@@ -13,6 +13,9 @@ class CategoryViewWithTitleViewController: UIViewController {
     @IBOutlet private weak var categoryTitleLabel: UILabel?
     @IBOutlet private weak var categorySubTitleLabel: UILabel?
     @IBOutlet private weak var contentView: UIView?
+    @IBOutlet private weak var categoryButton: UIButton?
+    
+    var userDidSelectCategoryActionBlock: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,7 @@ class CategoryViewWithTitleViewController: UIViewController {
     
     func showTitle(_ title: String) {
         categoryTitleLabel?.text = title
+        categoryButton?.setTitle(title, for: .normal)
     }
     
     func showCategoryDescription(_ description: String) {
@@ -29,5 +33,9 @@ class CategoryViewWithTitleViewController: UIViewController {
     
     func showCategoryContent(_ content: AtomPresenter) {
         contentView?.fill(by: content.view)
+    }
+    
+    @IBAction func userDidSelectCategory(_ sender: UIButton) {
+        userDidSelectCategoryActionBlock?()
     }
 }

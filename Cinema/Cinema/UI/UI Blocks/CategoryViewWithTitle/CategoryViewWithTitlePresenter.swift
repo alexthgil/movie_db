@@ -13,19 +13,31 @@ struct CategoryViewWithTitleConfiguration {
     let content: AtomPresenter
 }
 
+protocol CategoryViewWithTitleDelegate: class {
+    func onUserDidSelecCategory(sender: CategoryViewWithTitlePresenter, category: Category)
+}
+
 class CategoryViewWithTitlePresenter: AtomPresenter {
     
-    let vc = CategoryViewWithTitleViewController()
+    private let vc = CategoryViewWithTitleViewController()
+    weak var delegate: CategoryViewWithTitleDelegate?
+    private var category: Category = .none
     
     init() {
         
         _ = vc.view
-        
+        vc.userDidSelectCategoryActionBlock = { [weak self] in
+            
+            guard let strongSelf = self else { return }
+            
+            self?.delegate?.onUserDidSelecCategory(sender: strongSelf, category: strongSelf.category)
+        }
     }
     
     var collectionViewPresenter: AtomPresenter?
     
     func configure(with configuration: CategoryViewWithTitleConfiguration) {
+        category = configuration.category
         vc.showTitle(configuration.category.title)
         vc.showCategoryDescription(configuration.category.subTitle)
         collectionViewPresenter = configuration.content

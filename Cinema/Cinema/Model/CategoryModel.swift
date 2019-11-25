@@ -15,6 +15,7 @@ class CategoryModel: CollectionViewPresenterModel {
     
     let category: Category
     var isLoading = false
+    var inited: Bool = false
     
     let coreDataManager = CoreDataManager.shared
     
@@ -46,11 +47,10 @@ class CategoryModel: CollectionViewPresenterModel {
     }
     
     var currentRequest: URLSessionDataTask?
-    
     func loadInitialData() {
         queue.addOperation { [weak self] in
             
-            guard let strongSelf = self, strongSelf.isLoading == false else {
+            guard let strongSelf = self, strongSelf.isLoading == false, strongSelf.inited == false else {
                 return
             }
             
@@ -62,6 +62,7 @@ class CategoryModel: CollectionViewPresenterModel {
                 self?.saveData(decodedResponse, completion: {
                     strongSelf.isLoading = false
                     strongSelf.totalPages = decodedResponse.totalPages ?? 1
+                    strongSelf.inited = true
                 })
             })
             
@@ -85,7 +86,7 @@ class CategoryModel: CollectionViewPresenterModel {
             
             let databaseIO = DatabaseIO.shared
             
-            strongSelf.currentRequest = databaseIO.createRequest(for: ResponseTilesBatch.self, category: strongSelf.category, page: strongSelf.page, completion: { [weak self](decodedResponse) in
+            strongSelf.currentRequest = databaseIO.createRequest(for: ResponseTilesBatch.self, category: strongSelf.category, page: nextPage, completion: { [weak self](decodedResponse) in
                 self?.saveData(decodedResponse, completion: {
                     strongSelf.isLoading = false
                     strongSelf.page = strongSelf.page + 1

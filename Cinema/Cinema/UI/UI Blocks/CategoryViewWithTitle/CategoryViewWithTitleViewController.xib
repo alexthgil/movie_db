@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewWithTitleViewController" customModule="Cinema" customModuleProvider="target">
             <connections>
+                <outlet property="categoryButton" destination="akT-Sy-gKO" id="eWY-5i-waG"/>
                 <outlet property="categorySubTitleLabel" destination="Tcr-cL-42x" id="X4X-tU-z5B"/>
-                <outlet property="categoryTitleLabel" destination="G7Z-df-xa1" id="vsJ-Pl-0eg"/>
                 <outlet property="contentView" destination="sVV-KO-pwC" id="is5-7c-xSA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,28 +27,30 @@
                         <constraint firstAttribute="height" constant="229" id="V2a-vS-p9K"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Top Rated" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7Z-df-xa1">
-                    <rect key="frame" x="20" y="10" width="102" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcr-cL-42x">
-                    <rect key="frame" x="355" y="36" width="39" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcr-cL-42x">
+                    <rect key="frame" x="313.5" y="57.5" width="80.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akT-Sy-gKO">
+                    <rect key="frame" x="20" y="10" width="94" height="42"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="Top Rated"/>
+                    <connections>
+                        <action selector="userDidSelectCategory:" destination="-1" eventType="touchUpInside" id="T25-Us-fOG"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="G7Z-df-xa1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="7j4-0n-bco"/>
+                <constraint firstItem="akT-Sy-gKO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Azf-C7-XUF"/>
+                <constraint firstItem="akT-Sy-gKO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Szf-ud-VHe"/>
                 <constraint firstItem="sVV-KO-pwC" firstAttribute="top" secondItem="Tcr-cL-42x" secondAttribute="bottom" constant="5" id="VO6-Ce-DW1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tcr-cL-42x" secondAttribute="trailing" constant="20" id="XXN-Ny-mOc"/>
-                <constraint firstItem="Tcr-cL-42x" firstAttribute="top" secondItem="G7Z-df-xa1" secondAttribute="bottom" constant="5" id="d3u-B7-7cJ"/>
                 <constraint firstAttribute="bottom" secondItem="sVV-KO-pwC" secondAttribute="bottom" id="e5p-Y3-IeJ"/>
                 <constraint firstAttribute="trailing" secondItem="sVV-KO-pwC" secondAttribute="trailing" id="hJi-5I-2ly"/>
+                <constraint firstItem="sVV-KO-pwC" firstAttribute="top" secondItem="akT-Sy-gKO" secondAttribute="bottom" constant="30" id="ods-2X-t8p"/>
                 <constraint firstItem="sVV-KO-pwC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rKi-gB-CUL"/>
-                <constraint firstItem="G7Z-df-xa1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zY5-Em-jV4"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

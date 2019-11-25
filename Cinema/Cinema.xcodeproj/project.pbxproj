@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3CFEF2236238CC004A9014 /* CategoryDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CFEF1236238CC004A9014 /* CategoryDetailsPresenter.swift */; };
 		FA5444FB235343E8008A6635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5444FA235343E8008A6635 /* AppDelegate.swift */; };
 		FA544502235343E8008A6635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA544500235343E8008A6635 /* Main.storyboard */; };
 		FA544505235343E8008A6635 /* Cinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA544503235343E8008A6635 /* Cinema.xcdatamodeld */; };
@@ -91,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA3CFEF1236238CC004A9014 /* CategoryDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsPresenter.swift; sourceTree = "<group>"; };
 		FA5444F7235343E8008A6635 /* Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5444FA235343E8008A6635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA544501235343E8008A6635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,11 +258,11 @@
 		FA544530235359BB008A6635 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA544541235359BB008A6635 /* AppWorkflowModel.swift */,
 				FA544531235359BB008A6635 /* Database */,
 				FA544538235359BB008A6635 /* CategoryModel.swift */,
 				FA544539235359BB008A6635 /* SearchEngineModel.swift */,
 				FA54453A235359BB008A6635 /* CoreData */,
-				FA544541235359BB008A6635 /* AppWorkflowModel.swift */,
 				FA544542235359BB008A6635 /* Category.swift */,
 			);
 			path = Model;
@@ -338,6 +340,7 @@
 		FA544559235359D6008A6635 /* UI Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				FA3CFEF1236238CC004A9014 /* CategoryDetailsPresenter.swift */,
 				FA54455A235359D6008A6635 /* Collection View */,
 				FA544569235359D7008A6635 /* User Search */,
 				FA544573235359D7008A6635 /* DetailsVC */,
@@ -352,12 +355,12 @@
 		FA54455A235359D6008A6635 /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
+				FA544567235359D7008A6635 /* CollectionViewPresenter.swift */,
+				FA544568235359D7008A6635 /* CollectionViewController.swift */,
+				FA544566235359D7008A6635 /* CollectionViewController.xib */,
 				FA54455B235359D6008A6635 /* Cells */,
 				FA544560235359D6008A6635 /* PlainTile.swift */,
 				FA544561235359D6008A6635 /* Collection View Parts */,
-				FA544566235359D7008A6635 /* CollectionViewController.xib */,
-				FA544567235359D7008A6635 /* CollectionViewPresenter.swift */,
-				FA544568235359D7008A6635 /* CollectionViewController.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -447,9 +450,9 @@
 		FA54457F235359D7008A6635 /* CategoryViewWithTitle */ = {
 			isa = PBXGroup;
 			children = (
+				FA544582235359D7008A6635 /* CategoryViewWithTitlePresenter.swift */,
 				FA544580235359D7008A6635 /* CategoryViewWithTitleViewController.swift */,
 				FA544581235359D7008A6635 /* CategoryViewWithTitleViewController.xib */,
-				FA544582235359D7008A6635 /* CategoryViewWithTitlePresenter.swift */,
 			);
 			path = CategoryViewWithTitle;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				FA54459F235359D7008A6635 /* TileDetailsController.swift in Sources */,
 				FA5445A4235359D7008A6635 /* EmptyViewController.swift in Sources */,
 				FA54458C235359D7008A6635 /* SearchResultCollectionViewCell.swift in Sources */,
+				FA3CFEF2236238CC004A9014 /* CategoryDetailsPresenter.swift in Sources */,
 				FA5445AA235359D7008A6635 /* ViewWithFixedWidthPresenter.swift in Sources */,
 				FA54454B235359BC008A6635 /* CoreDataManager.swift in Sources */,
 				FA544595235359D7008A6635 /* CollectionViewPresenter.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class SearchResultCollectionViewCell: BasicCustomCollectionViewCell, PlainTileRepresenter, CollectionViewListener {
 
     override class var itemSize: CellSize {
-        return CellSize(width: .equalToSuperview, height: .customSizeValue(200))
+        return CellSize.defined(width: .equalToSuperview, height: .customSizeValue(200))
     }
     
     override class var reuseIdentifier: String {

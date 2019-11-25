@@ -8,7 +8,11 @@
 
 import UIKit
 
-class InitialViewController: UIViewController, UserSearchControllerDelegate, CollectionViewUserActionsDelegate, UINavigationControllerDelegate {
+protocol CategoryPresenterDelegate: CollectionViewUserActionsDelegate, CategoryViewWithTitleDelegate {
+    
+}
+
+class InitialViewController: UIViewController, UserSearchControllerDelegate, UINavigationControllerDelegate, CategoryPresenterDelegate {
     
     @IBOutlet weak var contentView: UIView?
     
@@ -19,6 +23,8 @@ class InitialViewController: UIViewController, UserSearchControllerDelegate, Col
     private let viewWithFixedWidth = ViewWithFixedWidthPresenter()
     private let userSearchController = UserSearchController()
     private var searchResultsCollectionPresenter: SearchResultsCollectionPresenter?
+    
+    private let appWorkflowModel: AppWorkflowModel = AppWorkflowModelImpl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,30 +56,9 @@ class InitialViewController: UIViewController, UserSearchControllerDelegate, Col
     
     private func fillCategorisWithTitle() {
         for category in [Category.nowplaying, Category.popular, Category.toprated, Category.upcaming] {
-            let presenter = generateCategoryPresenter(for: category)
+            let presenter = UIFactory.shared.buildCategoryPresenter(for: category, modelBuilder: appWorkflowModel, actionsDelegate: self)
             categoriesWithTitle.append(presenter)
         }
-    }
-    
-    
-    func generateCategoryPresenter(for category: Category) -> CategoryViewWithTitlePresenter {
-        
-        let model = CategoryModel(category: category)
-        let config = UIFactory.shared.buildCategoryConfig(withCategoryType: category, model: model)
-        
-        let collectionViewPresenter = CollectionViewPresenter(with: config)
-        collectionViewPresenter.delegate = self
-        let categoryWithTitleConfig = CategoryViewWithTitleConfiguration(category: category, content: collectionViewPresenter)
-        
-        let categoryViewWithTitlePresenter = CategoryViewWithTitlePresenter()
-        categoryViewWithTitlePresenter.configure(with: categoryWithTitleConfig)
-        return categoryViewWithTitlePresenter
-    }
-    
-    //MARK: - Search string did change
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
     }
     
     //MARK: - UserSearchControllerListener
@@ -126,9 +111,22 @@ class InitialViewController: UIViewController, UserSearchControllerDelegate, Col
     //MARK: - UINavigationControllerDelegate
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if self == viewController {
+        if self === viewController {
             detailsPresenter = nil
         }
+    }
+    
+    //MARK: - CategoryViewWithTitleDelegate
+    
+    var categoryDetails: CategoryDetailsPresenter?
+    
+    func onUserDidSelecCategory(sender: CategoryViewWithTitlePresenter, category: Category) {
+        let m = appWorkflowModel.categoryModel(for: category)
+        let c = CategoryDetailsPresenter(model: m, category: category)
+        c.delegate = self
+        categoryDetails = c
+        
+        navigationController?.pushViewController(c.viewController, animated: true)
     }
 
 }

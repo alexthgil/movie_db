@@ -15,10 +15,8 @@ protocol CollectionViewDelegateListener: class {
 
 class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    var cellSize: CellSize = CellSize.zero
-    
-    private var defaultCellSize = CGSize(width: 150, height: 200)
-    
+    var cellSize: CellSize = CellSize.undefined
+        
     weak var listener: CollectionViewDelegateListener?
     
     init(listener: CollectionViewDelegateListener) {
@@ -64,24 +62,36 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
         var width: CGFloat = 0
         var height: CGFloat = 0
 
-        if case CellSizeValueType.customSizeValue(let widthValue) = cellSize.width {
-            width = widthValue
-        } else if case CellSizeValueType.equalToSuperview = cellSize.width {
-            width = collectionView.bounds.size.width
-        }
         
-        if case CellSizeValueType.customSizeValue(let heightValue) = cellSize.height {
-            height = heightValue
-        } else if case CellSizeValueType.equalToSuperview = cellSize.height {
-            height = collectionView.bounds.size.height
+        switch cellSize {
+        case .undefined:
+            break
+        case .defined(width: let w, height: let h):
+            switch w {
+            case .equalToSuperview:
+                width = collectionView.bounds.size.width
+            case .customSizeValue(let sw):
+                width = sw
+            }
+            
+            switch h {
+            case .equalToSuperview:
+                height = collectionView.bounds.size.height
+            case .customSizeValue(let sh):
+                height = sh
+            }
+
+        case .calculateColumns(columnsNumber: let number):
+            width = ceil(collectionView.bounds.size.width / CGFloat(number))
+            height = ceil(width * 4.0 / 3.0)
         }
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             width = width - 2 * layout.minimumInteritemSpacing
             height = height - 2 * layout.minimumLineSpacing
         } else {
-            width = width - 20
-            height = height - 20
+            width = width - 10
+            height = height - 10
         }
         
         let size = CGSize(width: width, height: height)

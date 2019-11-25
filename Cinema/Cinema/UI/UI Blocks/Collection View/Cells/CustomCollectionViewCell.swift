@@ -8,13 +8,10 @@
 
 import UIKit
 
-struct CellSize {
-    let width: CellSizeValueType
-    let height: CellSizeValueType
-    
-    static var zero: CellSize {
-        return CellSize(width: .equalToSuperview, height: .equalToSuperview)
-    }
+enum CellSize {
+    case defined(width: CellSizeValueType, height: CellSizeValueType)
+    case calculateColumns(columnsNumber: Int)
+    case undefined
 }
 
 enum CellSizeValueType {
@@ -24,7 +21,7 @@ enum CellSizeValueType {
 
 class BasicCustomCollectionViewCell: UICollectionViewCell {
     class var itemSize: CellSize {
-        return CellSize.zero
+        return CellSize.undefined
     }
     
     class var reuseIdentifier: String {
@@ -42,11 +39,16 @@ protocol PlainTileRepresenter: class {
     func uriRepresentation() -> URL?
 }
 
+class CellWithFixedColumnsNumber: CustomCollectionViewCell {
+    override class var itemSize: CellSize {
+        return CellSize.calculateColumns(columnsNumber: 3)
+    }
+}
 
 class CustomCollectionViewCell: BasicCustomCollectionViewCell, PlainTileRepresenter, CollectionViewListener {
 
     override class var itemSize: CellSize {
-        return CellSize(width: .customSizeValue(150), height: .equalToSuperview)
+        return CellSize.defined(width: .customSizeValue(150), height: .equalToSuperview)
     }
     
     override class var reuseIdentifier: String {

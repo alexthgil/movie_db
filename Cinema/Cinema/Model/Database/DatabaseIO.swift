@@ -34,6 +34,7 @@ class DatabaseIO {
     private let API_KEY = ""
     
     private init(){
+        databaseCache.countLimit = 40
         let databaseSessionConfig = URLSessionConfiguration.default
         self.databaseSession = URLSession(configuration: databaseSessionConfig)
     }

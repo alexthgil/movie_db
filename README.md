@@ -11,20 +11,7 @@ I'm still working on this application.
 
 Look at demo1.gif, demo2.gif, demo3.gif.
 
-<div style="display:block;" id="src">
-        <div style="display:inline-block; width:460px;">
-            <img src ="https://raw.githubusercontent.com/alexthgil/movie_db/master/scr1.png">
-        </div>
-
-        <div style="display:inline-block; width:460px;">
-            <img src ="https://raw.githubusercontent.com/alexthgil/movie_db/master/scr2.png">
-        </div>
-
-        <div style="display:inline-block; width:460px;">
-            <img src ="https://raw.githubusercontent.com/alexthgil/movie_db/master/scr3.png">
-        </div>
-        
-        <div style="display:inline-block; width:460px;">
-            <img src ="https://raw.githubusercontent.com/alexthgil/movie_db/master/scr4.png">
-        </div>
-</div>
+![ScreenShot1](scr1.png)
+![ScreenShot2](scr2.png)
+![ScreenShot3](scr3.png)
+![ScreenShot4](scr4.png)
